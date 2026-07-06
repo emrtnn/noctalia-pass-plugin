@@ -36,18 +36,33 @@ function onQuery(query)
 end
 
 function onActivate(id)
-  local cmd = "pass -c " .. shellEscape(id)
+    local cmd = "pass -c " .. shellEscape(id)
 
-  noctalia.runAsync(cmd, function(result)
-    if result.exitCode == 0 then
-      noctalia.notify("Pass", "Password copied.")
-    else
-      local err = result.stderr
-      if err == "" then
-        err = "Failed to copy password."
-      end
+    noctalia.runAsync(cmd, function(result)
+        if result.exitCode == 0 then
+            noctalia.notify("Pass", "Password copied.")
+            return
+        end
 
-      noctalia.notifyError("Pass", err)
-    end
-  end)
+        local err = (result.stderr or ""):lower()
+
+        if err:find("gpg") then
+            noctalia.notify(
+                "Pass",
+                "Unlocking your GPG key…"
+            )
+
+            noctalia.runInTerminal(
+                "pass show " .. shellEscape(id)
+            )
+
+            return
+        end
+
+        if err == "" then
+            err = "Failed to copy password."
+        end
+
+        noctalia.notifyError("Pass", err)
+    end)
 end
