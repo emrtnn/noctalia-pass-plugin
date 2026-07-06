@@ -1,0 +1,29 @@
+id = "emrtnn/pass"
+name = "Pass"
+version = "0.0.1"
+min_noctalia = "5.0.0"
+author = "emrtnn"
+license = "MIT"
+deprecated = false
+icon = "key"
+description = "Search and copy passwords using the standard pass CLI"
+tags = ["password"]
+dependencies = ["pass", "pass-otp", "gpg"]
+
+[[setting]]
+key = "refresh_interval"
+type = "int"
+label = "Refresh interval (seconds)"
+default = 30
+min = 5
+max = 3600
+
+[[launcher_provider]]
+id = "search"
+entry = "launcher.luau"
+prefix = "/pass"
+glyph = "key"
+
+[[service]]
+id = "cache"
+entry = "service.luau"
