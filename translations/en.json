@@ -1,0 +1,6 @@
+{
+  "copied": "Password copied.",
+  "decrypt_failed": "Failed to decrypt password.",
+  "clipboard_failed": "Unable to copy password.",
+  "store_failed": "Unable to read password store."
+}
