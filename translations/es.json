@@ -1,0 +1,7 @@
+{
+  "settings.refresh_interval.label": "Intervalo de actualización (segundos)",
+  "notification.copied": "Contraseña copiada.",
+  "notification.unlocking": "Desbloqueando clave GPG…",
+  "notification.copy_failed": "Error al copiar la contraseña.",
+  "notification.store_not_found": "No se encontró el almacén de contraseñas."
+}

@@ -13,7 +13,7 @@ dependencies = ["pass", "pass-otp", "gpg"]
 [[setting]]
 key = "refresh_interval"
 type = "int"
-label = "Refresh interval (seconds)"
+label_key = "settings.refresh_interval.label"
 default = 30
 min = 5
 max = 3600

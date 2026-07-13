@@ -65,7 +65,7 @@ local function rebuild()
     local root = passwordStoreDir()
 
     if not noctalia.fileExists(root) then
-        noctalia.notifyError("Pass", "Password store not found.")
+        noctalia.notifyError("Pass", noctalia.tr("notification.store_not_found"))
         return
     end
 

@@ -15,7 +15,6 @@ function onQuery(query)
         local score
 
         if query == "" then
-            -- Show all entries, preserving alphabetical order.
             score = 1
         else
             score = noctalia.fuzzyScore(query, entry.path)
@@ -36,31 +35,27 @@ function onQuery(query)
 end
 
 function onActivate(id)
-    local cmd = "pass -c " .. shellEscape(id)
+    local escaped = shellEscape(id)
 
-    noctalia.runAsync(cmd, function(result)
+    noctalia.runAsync("pass -c " .. escaped, function(result)
         if result.exitCode == 0 then
-            noctalia.notify("Pass", "Password copied.")
+            noctalia.notify("Pass", noctalia.tr("notification.copied"))
             return
         end
 
         local err = (result.stderr or ""):lower()
 
         if err:find("gpg") then
-            noctalia.notify(
-                "Pass",
-                "Unlocking your GPG key…"
-            )
+            noctalia.notify("Pass", noctalia.tr("notification.unlocking"))
 
             noctalia.runInTerminal(
-                "pass show " .. shellEscape(id)
+                "pass show " .. escaped .. " && pass -c " .. escaped
             )
-
             return
         end
 
         if err == "" then
-            err = "Failed to copy password."
+            err = noctalia.tr("notification.copy_failed")
         end
 
         noctalia.notifyError("Pass", err)

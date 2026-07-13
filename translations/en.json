@@ -1,6 +1,7 @@
 {
-  "copied": "Password copied.",
-  "decrypt_failed": "Failed to decrypt password.",
-  "clipboard_failed": "Unable to copy password.",
-  "store_failed": "Unable to read password store."
+  "settings.refresh_interval.label": "Refresh interval (seconds)",
+  "notification.copied": "Password copied.",
+  "notification.unlocking": "Unlocking GPG key…",
+  "notification.copy_failed": "Failed to copy password.",
+  "notification.store_not_found": "Password store not found."
 }
