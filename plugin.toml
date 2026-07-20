@@ -21,7 +21,7 @@ max = 3600
 [[launcher_provider]]
 id = "search"
 entry = "launcher.luau"
-prefix = "/pass"
+prefix = "pass"
 glyph = "key"
 
 [[service]]
