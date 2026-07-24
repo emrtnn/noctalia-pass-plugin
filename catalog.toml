@@ -1,0 +1,12 @@
+[[plugin]]
+id = "emrtnn/pass"
+name = "Pass"
+version = "0.0.1"
+plugin_api = 3
+author = "emrtnn"
+license = "MIT"
+icon = "key"
+description = "Search and copy pass passwords using noctalia's launcher"
+deprecated = false
+tags = ["password"]
+dependencies = ["pass", "pass-otp", "gpg"]

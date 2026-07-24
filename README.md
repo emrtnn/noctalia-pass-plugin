@@ -12,9 +12,10 @@ Launcher integration for `pass` (the standard Unix password manager).
 ## Requirements
 
 - pass
+- pass-otp
 - gpg
 
 ## Installation
 
 ```sh
-noctalia msg plugins source add emrtnn git https://github.com/emrtnn/noctalia-plugins
+noctalia msg plugins source add emrtnn git https://github.com/emrtnn/noctalia-pass-plugin
