@@ -1,7 +1,14 @@
 {
-  "settings.refresh_interval.label": "Refresh interval (seconds)",
-  "notification.copied": "Password copied.",
-  "notification.unlocking": "Unlocking GPG key…",
-  "notification.copy_failed": "Failed to copy password.",
-  "notification.store_not_found": "Password store not found."
+  "settings": {
+    "refresh_interval": {
+      "label": "Refresh interval (seconds)",
+      "description": "How often to rescan the password store, in seconds."
+    }
+  },
+  "notification": {
+    "copied": "Password copied.",
+    "unlocking": "Unlocking GPG key…",
+    "copy_failed": "Failed to copy password.",
+    "store_not_found": "Password store not found."
+  }
 }
