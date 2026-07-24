@@ -48,9 +48,9 @@ function onActivate(id)
         if err:find("gpg") then
             noctalia.notify("Pass", noctalia.tr("notification.unlocking"))
 
-            noctalia.runInTerminal(
-                "pass show " .. escaped .. " && pass -c " .. escaped
-            )
+            noctalia.runInTerminal("pass -c " .. escaped)
+            
+            noctalia.notify("Pass", noctalia.tr("notification.copied"))
             return
         end
 
